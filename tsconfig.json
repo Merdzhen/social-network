@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/", // куда производится сборка (неважно, у нас есть вебпак)
+    "noImplicitAny": true, //подсвечивает если не указан тип
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true, // позволяет компилятору обрабатывать не только .ts, но и .js
+    "moduleResolution": "node", //classic; node в 99%
+    //esModuleInterop позволяет работать с пакетами, которые используют common.js как с обычными пакетами с помощью import
+    // (require() module.export - это common js)
+    "esModuleInterop": true,
+    // если библиотека не имеет default import - лоадеры автоматически создают их
+    // вместо 'import * as' можно писать просто 'import'
+    "allowSyntheticDefaultImports": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
