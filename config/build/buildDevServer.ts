@@ -6,5 +6,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration  {
     port: options.port,
     open: true,
     historyApiFallback: true, // позволяет проксировать запросы через index page (прямой доступ к другим страницам кроме главной)
+    hot: true,
   }
 }
