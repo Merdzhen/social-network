@@ -1,9 +1,8 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { BuildOptions } from "./types/config";
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
-export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
-
+export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   // если не используем тайпскрипт - нужен babel-loader
   const typescriptLoader = {
     test: /\.tsx?$/,
@@ -28,18 +27,18 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')), // применяем модульный подход только к файлам (".module.") - а остальные файлы как обычно
             localIdentName: isDev ? '[name]__[local]__[hash:base64:5]' : '[hash:base64:8]',
-          }
+          },
         },
       },
       // "css-loader",
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
@@ -47,28 +46,27 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
-        "plugins": [
+        plugins: [
           [
-            "i18next-extract", 
+            'i18next-extract',
             {
               locales: ['en', 'ru'],
-              keyAsDefaultValue: false // true - в значение подставляет ключ перевода
-            }
-          ]
-        ]
-      }
-    }
-  }
-
+              keyAsDefaultValue: false, // true - в значение подставляет ключ перевода
+            },
+          ],
+        ],
+      },
+    },
+  };
 
   return [
     fileLoader,
     svgLoader,
     babelLoader,
-    typescriptLoader, 
+    typescriptLoader,
     cssLoader,
-  ]
+  ];
 }

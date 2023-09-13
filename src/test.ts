@@ -1,4 +1,4 @@
 export function someFn(arg: number): string {
-  console.log('RANDOM FUNCTION ччч')
-  return ''
+  console.log('RANDOM FUNCTION ччч');
+  return '';
 }

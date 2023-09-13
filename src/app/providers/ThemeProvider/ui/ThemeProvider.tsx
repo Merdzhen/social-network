@@ -1,22 +1,21 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
   Theme,
-} from "../lib/ThemeContext";
+} from '../lib/ThemeContext';
 
-const defaultTheme =
-  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
 const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = React.useState<Theme>(defaultTheme);
 
   const defaultProps = React.useMemo(
     () => ({
-      theme: theme,
-      setTheme: setTheme,
+      theme,
+      setTheme,
     }),
-    [theme]
+    [theme],
   );
 
   return (
