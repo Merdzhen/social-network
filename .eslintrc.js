@@ -14,9 +14,9 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
-    indent: [2, 2],
+    'react/jsx-indent': [2, 2], // [1 - error, 2 - rule, 0 - off ; отступы в jsx коде]
+    'react/jsx-indent-props': [2, 2], // отступы в пропсах
+    indent: [2, 2], // отступы в обычном коде
     quotes: [2, 'single', { avoidEscape: true }],
     'react/jsx-filename-extension': [
       2,
