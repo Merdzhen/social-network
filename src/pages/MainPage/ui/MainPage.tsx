@@ -5,10 +5,7 @@ const MainPage = () => {
   const { t } = useTranslation('main');
 
   return (
-    <>
-      <div>{t('main page')}</div>
-      <ClasscompErrors />
-    </>
+    <div>{t('main page')}</div>
   );
 };
 
