@@ -17,8 +17,7 @@ export const PageError = ({ className }: PageErrorProps) => {
   const { theme } = useTheme();
 
   const reloadPage = () => {
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
+    window.location.reload();
   };
 
   return (

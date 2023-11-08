@@ -34,7 +34,7 @@ module.exports = {
     'object-curly-newline': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'warn',
-    'max-len': ['warn', { ignoreComments: true }],
+    'max-len': ['warn', { ignoreComments: true, code: 100 }],
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': 2,
   },
