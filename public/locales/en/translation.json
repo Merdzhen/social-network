@@ -2,5 +2,7 @@
   "opposite-language": "Русский",
   "main": "Main",
   "about": "About",
-  "not found page": "Page not found"
+  "not found page": "Page not found",
+  "page-error": "An unexpected error occurred",
+  "reload-page": "Reload the page"
 }

@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import './styles/index.scss';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -8,6 +8,13 @@ import { Sidebar } from 'widgets/SideBar';
 
 function App() {
   const { theme } = useTheme();
+
+  // имитация ошибки для тестирования ErrorBoundary
+  // React.useEffect(() => {
+  // if (Math.random() < 0.5) {
+  // throw new Error();
+  // }
+  // }, []);
 
   return (
     <div className={classNames('app', {}, [theme])}>
