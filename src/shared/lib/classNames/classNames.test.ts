@@ -15,6 +15,11 @@ describe('classNames', () => {
     expect(classNames('someClass', { hovered: true, scrollable: true })).toBe(expected);
   });
 
+  test('with string mods', () => {
+    const expected = 'someClass size scrollable';
+    expect(classNames('someClass', { size: 'large', scrollable: true })).toBe(expected);
+  });
+
   test('with mods false', () => {
     const expected = 'someClass hovered class1 class2';
     expect(classNames(
